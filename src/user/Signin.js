@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Base from "../core/Base";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { signin, authenticate, isAuthenticated } from "../auth/helper";
 
 const Signin = () => {
-  const history = useHistory();
+  // const history = useHistory();
+
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -37,13 +38,13 @@ const Signin = () => {
         console.log("Signin Request Failed");
       });
   };
-  // if user is admin return to admin dashboard else user panel..
+  // if user is admin return to admin dashboard else user dashboard..
   const performRedirect = () => {
     if (didRedirect) {
       if (user && user.role === 1) {
-        return <p>return to admin panel</p>;
+        return <Redirect to="/admin/dashboard" />;
       } else {
-        return <p>return to user panel</p>;
+        return <Redirect to="/user/dashboard" />;
       }
     }
     if (isAuthenticated()) {
@@ -69,6 +70,7 @@ const Signin = () => {
             className="alert alert-danger"
             style={{ display: error ? "" : "none" }}
           >
+            {" "}
             {error}
           </div>
         </div>
@@ -127,7 +129,6 @@ const Signin = () => {
       {errorMessage()}
       {signInForm()}
       {performRedirect()}
-      <p>{JSON.stringify(user)}</p>
     </Base>
   );
 };
