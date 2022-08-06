@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth/helper";
 
-const currentTab = (history, path) => {
+const handleActive = (history, path) => {
   if (history.location.pathname === path) {
     return { color: "#FFFFFF", background: "rgba(0.1, 0.1, 0.1, 0.15)" };
   } else {
@@ -10,7 +10,7 @@ const currentTab = (history, path) => {
   }
 };
 
-function Navigate({ history }) {
+const Navbar = ({ history }) => {
   return (
     <div>
       <div className="navbar navbar-expand-lg">
@@ -29,7 +29,7 @@ function Navigate({ history }) {
               className="material-icons"
               style={{ fontSize: "30px", color: "white" }}
             >
-              menu
+              Menu
             </i>
           </button>
         </div>
@@ -37,7 +37,7 @@ function Navigate({ history }) {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link
-                stylecurrentTab(history, "/")}
+                style={handleActive(history, "/")}
                 className="nav-link"
                 to="/"
               >
@@ -46,7 +46,7 @@ function Navigate({ history }) {
             </li>
             <li className="nav-item">
               <Link
-                stylecurrentTab(history, "/cart")}
+                style={handleActive(history, "/cart")}
                 className="nav-link"
                 to="/cart"
               >
@@ -56,7 +56,7 @@ function Navigate({ history }) {
             {isAuthenticated() && isAuthenticated().user.role === 0 && (
               <li className="nav-item">
                 <Link
-                  style={currentTab(history, "/user/dashboard")}
+                  style={handleActive(history, "/user/dashboard")}
                   className="nav-link"
                   to="/user/dashboard"
                 >
@@ -67,7 +67,7 @@ function Navigate({ history }) {
             {isAuthenticated() && isAuthenticated().user.role === 1 && (
               <li className="nav-item">
                 <Link
-                  style={currentTab(history, "/admin/dashboard")}
+                  style={handleActive(history, "/admin/dashboard")}
                   className="nav-link"
                   to="/admin/dashboard"
                 >
@@ -75,12 +75,11 @@ function Navigate({ history }) {
                 </Link>
               </li>
             )}
-            {/* for not authenticated users */}
             {!isAuthenticated() && (
               <Fragment>
                 <li className="nav-item">
                   <Link
-                    style={currentTab(history, "/signup")}
+                    style={handleActive(history, "/signup")}
                     className="nav-link"
                     to="/signup"
                   >
@@ -89,7 +88,7 @@ function Navigate({ history }) {
                 </li>
                 <li className="nav-item">
                   <Link
-                    style={currentTab(history, "/signin")}
+                    style={handleActive(history, "/signin")}
                     className="nav-link"
                     to="/signin"
                   >
@@ -98,7 +97,6 @@ function Navigate({ history }) {
                 </li>
               </Fragment>
             )}
-            {/* for isAuthenticated */}
             {isAuthenticated() && (
               <li className="nav-item">
                 <span
@@ -118,6 +116,6 @@ function Navigate({ history }) {
       </div>
     </div>
   );
-}
+};
 
-export default withRouter(Navigate);
+export default withRouter(Navbar);
