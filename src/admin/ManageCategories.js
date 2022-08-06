@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
 import { isAuthenticated } from "../auth/helper";
-import { getAllProducts, deleteProduct } from "./helper/adminapicall";
+import { getAllCategories, deleteCategory } from "./helper/adminapicall";
 import { Link } from "react-router-dom";
 
-const ManageProducts = () => {
-  const [products, setProducts] = useState([]);
+const ManageCategories = () => {
+  const [categories, setCategories] = useState([]);
 
   const { user, token } = isAuthenticated();
 
   const preload = () => {
-    getAllProducts().then((data) => {
+    getAllCategories().then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
-        setProducts(data);
+        setCategories(data);
       }
     });
   };
@@ -23,8 +23,8 @@ const ManageProducts = () => {
     preload();
   }, []);
 
-  const deleteProd = (productId) => {
-    deleteProduct(productId, user._id, token)
+  const deleteCate = (categoryId) => {
+    deleteCategory(categoryId, user._id, token)
       .then((data) => {
         if (data.error) {
           console.log(data.error);
@@ -41,7 +41,7 @@ const ManageProducts = () => {
         className="adminPage-heading text-center py-3 mt-4"
         style={{ color: "#646464" }}
       >
-        Products List
+        Category List
       </h3>
       <table className="table table-striped">
         <thead
@@ -52,19 +52,19 @@ const ManageProducts = () => {
           }}
         >
           <tr>
-            <th scope="col">Product Name</th>
+            <th scope="col">Category Name</th>
             <th>Update</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody className="text-center">
-          {products.map((product, index) => {
+          {categories.map((category, index) => {
             return (
               <tr key={index}>
-                <th scope="row">{product.name}</th>
+                <th scope="row">{category.name}</th>
                 <th scope="row">
                   <Link
-                    to={`/admin/product/update/${product._id}`}
+                    to={`/admin/category/update/${category._id}`}
                     className="btn btn-sm btn-warning text-white"
                     style={{ textDecoration: "none" }}
                   >
@@ -74,7 +74,7 @@ const ManageProducts = () => {
                 <th scope="row">
                   <button
                     onClick={() => {
-                      deleteProd(product._id);
+                      deleteCate(category._id);
                     }}
                     className="btn btn-sm btn-danger text-white"
                   >
@@ -103,4 +103,4 @@ const ManageProducts = () => {
   );
 };
 
-export default ManageProducts;
+export default ManageCategories;

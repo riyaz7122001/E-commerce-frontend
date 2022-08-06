@@ -4,19 +4,17 @@ import { Redirect } from "react-router-dom";
 import { signin, authenticate, isAuthenticated } from "../auth/helper";
 
 const Signin = () => {
-  // const history = useHistory();
-
   const [values, setValues] = useState({
-    email: "",
-    password: "",
+    email: "ayesha@gmail.com",
+    password: "ayesha",
     error: "",
     loading: false,
     didRedirect: false,
   });
   const { email, password, error, loading, didRedirect } = values;
   const { user } = isAuthenticated();
-  const handleChange = (e) => {
-    setValues({ ...values, error: false, [e.target.name]: e.target.value });
+  const handleChange = (name) => (e) => {
+    setValues({ ...values, error: false, [name]: e.target.value });
   };
 
   const onSubmit = (e) => {
@@ -93,7 +91,7 @@ const Signin = () => {
                 type="email"
                 name="email"
                 value={email}
-                onChange={handleChange}
+                onChange={handleChange("email")}
               />
             </div>
             <div className="form-group">
@@ -106,7 +104,7 @@ const Signin = () => {
                 type="password"
                 name="password"
                 value={password}
-                onChange={handleChange}
+                onChange={handleChange("password")}
               />
             </div>
 

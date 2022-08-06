@@ -1,16 +1,243 @@
-.btn,
-.jumbotron,
-.nav :hover {
-  border-radius: 0px;
-}
+/* Media Queries */
 
+/* Home Page Hero Image */
+@media screen and (max-width: 768px) {
+  .img-container {
+    height: 180px !important;
+  }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .inner-container h2 {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  font-size: 18px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .inner-container p {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  font-size: 12px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .navbar-nav .nav-link {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  padding-left: 15px !important;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /* Products */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @media screen and (min-width: 768px) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  .catalogue {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    padding: 10px 100px 10px !important;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /* Navbar */
 body {
-  background: #343a40;
+  background: rgb(250, 250, 250);
+    position: relative;
+    padding-bottom: 58px;
+    min-height: 100vh;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  
+  .navbar {
+    background-color: #03a9f4 !important;
+  }
+  
+  .nav-item {
+    margin: 4px;
+    padding: 2px;
+  }
+  
+  .nav-link {
+    transition: 0.3s ease;
+    color: #d4d4d4;
+    font-weight: 500;
+  }
+  
+  .nav-link:hover {
+    color: white !important;
+    background: rgba(0.1, 0.1, 0.1, 0.15) !important;
 }
 
 footer {
+  background: #137fb9;
+    /* text-align: center; */
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer h5 {
+    font-size: 12px;
+  }
+  
+  .signInForm {
+    background: #ffffff;
+    padding: 50px;
+    box-shadow: 0 5px 15px rgba(0.1, 0.1, 0.1, 0.15);
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  
+  .signInForm h3 {
+    padding: 0;
+    margin: 0 0 40px;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .signInForm div {
+    position: relative;
+    margin: 30px 0;
+  }
+  
+  .signInForm div input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  .signInForm div textarea,
+  .signInForm div select {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid #777777;
+    border-radius: 0;
+    padding-left: 5px;
+    box-sizing: border-box;
+    font-weight: 500;
+  }
+  
+  textarea {
+    resize: none;
+    overflow-y: auto;
+  }
+  
+  .signInForm div input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus,
+  .signInForm div textarea:focus,
+  .signInForm div select:focus {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1.5px solid #03a9f4;
+    border-radius: 0;
+  }
+  
+  /* .signInForm div .fa {
+                      color: #777777;
   position: absolute;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
+  top: 12px;
+    left: 2px;
+  }
+  
+  .signInForm div .fa:focus {
+    color: #03a9f4;
+  }
+  
+  */ .submitBtn {
+    background: #03a9f4;
+    color: white;
+    font-weight: bold;
+    margin: 40px 0 0 0;
+    border: none;
+    border-radius: 2;
+  }
+  
+  .submitBtn:hover {
+    color: white;
+    background: #137fb9;
+  }
+  
+  .submitBtn.active,
+  .submitBtn:active,
+  .submitBtn:focus {
+    border-radius: 0px;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  .btnBelowTxt {
+    font-size: 15px;
+    color: #03a9f4;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1.2rem;
+  }
+  
+  .btnBelowTxt a {
+    text-decoration: none !important;
+  }
+  
+  .btnBelowTxt:hover {
+    color: #137fb9;
+  }
+  
+  .list-group-item.active {
+    color: #000000 !important;
+    background-color: white !important;
+    box-shadow: 0 5px 5px rgba(0.1, 0.1, 0.1, 0.15);
+    margin: 10px;
+    border-radius: unset;
+    border: none;
+  }
+  
+  .list-group-item.active:hover {
+    border-left: 4px solid #137fb9;
+  }
+  
+  #myFile::before {
+    content: none !important;
+  }
+  
+  .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  #myFile {
+    outline: none !important;
+    display: block !important;
+    width: 100%;
+    padding-left: 5px;
+    box-sizing: border-box !important;
+    font-weight: 500 !important;
+    border: none !important;
+    border-bottom: 1.5px solid #777777 !important;
+    border-radius: 0 !important;
+    padding-bottom: 5px;
+  }
+  
+  .img-container {
+    border-radius: 5px;
+    background-image: linear-gradient(rgba(0, 112, 163, 0.4), rgba(0, 0, 0, 0.2)),
+      url("D: \JavaScript\mernbootcamp\tshirts\image-container.jpg");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .inner-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 5;
+  }
+  
+  .navbar-toggler:focus {
+    outline: none;
+  }
+  
+  .cart-delete {
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+  .cart-delete:hover {
+    color: #c20000 !important;
+    cursor: pointer;
 }

@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
 import { isAuthenticated } from "../auth/helper";
-import { Link } from "react-router-dom";
-import { createCategory } from "./helper/adminapicall";
+import { Link, Redirect } from "react-router-dom";
+import { updateCategory, getCategory } from "./helper/adminapicall";
 
-const AddCategory = () => {
+const UpdateCategory = ({ match }) => {
   const [name, setName] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-  // const [getRedirect, setGetRedirect] = useState(false);
+  const [getRedirect, setGetRedirect] = useState(false);
 
   const { user, token } = isAuthenticated();
 
@@ -23,28 +23,48 @@ const AddCategory = () => {
     setError("");
     setSuccess(false);
 
-    createCategory(user._id, token, { name }).then((data) => {
+    updateCategory(match.params.categoryId, user._id, token, { name }).then(
+      (data) => {
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setError("");
+          setSuccess(true);
+          setTimeout(() => {
+            setGetRedirect(true);
+          }, 1000);
+        }
+      }
+    );
+  };
+
+  const redirectAfterSuccess = () => {
+    if (getRedirect) {
+      return <Redirect to="/admin/categories" />;
+    }
+  };
+
+  useEffect(() => {
+    preload(match.params.categoryId);
+  }, []);
+
+  const preload = (categoryId) => {
+    getCategory(categoryId).then((data) => {
       if (data.error) {
         setError(data.error);
-      } else {
-        setError("");
-        setSuccess(true);
+        setSuccess(false);
         setName("");
+      } else {
+        setName(data.name);
       }
     });
   };
-
-  // const redirectAfterSuccess = () => {
-  //   if (getRedirect) {
-  //     return <Redirect to="/admin/categories" />;
-  //   }
-  // };
 
   const successMessage = () => {
     if (success) {
       return (
         <h6 className="text-success text-center mb-4">
-          Category Created Successfully !
+          Category Updated Successfully !
         </h6>
       );
     }
@@ -54,20 +74,20 @@ const AddCategory = () => {
     if (error) {
       return (
         <h5 className="text-danger text-center mb-4">
-          Failed To Create Category !
+          Failed To Update Category !
         </h5>
       );
     }
   };
 
-  const addCategoryForm = () => {
+  const updateCategoryForm = () => {
     return (
       <div className="row my-2">
         <div className="col-md-6 offset-sm-3">
           <form className="signInForm">
             {successMessage()}
             {errorMessage()}
-            <h3 className="text-center">Add Category</h3>
+            <h3 className="text-center">Update Category</h3>
             <div className="form-group">
               <input
                 type="text"
@@ -82,10 +102,10 @@ const AddCategory = () => {
               type="button"
               className="submitBtn btn btn-block"
             >
-              Create Category
+              Update Category
             </button>
             <p className="text-center btnBelowTxt">
-              <Link to="/admin/dashboard">Go Back</Link>
+              <Link to="/admin/categories">Go Back</Link>
             </p>
           </form>
         </div>
@@ -93,7 +113,12 @@ const AddCategory = () => {
     );
   };
 
-  return <Base>{addCategoryForm()}</Base>;
+  return (
+    <Base>
+      {updateCategoryForm()}
+      {redirectAfterSuccess()}
+    </Base>
+  );
 };
 
-export default AddCategory;
+export default UpdateCategory;
